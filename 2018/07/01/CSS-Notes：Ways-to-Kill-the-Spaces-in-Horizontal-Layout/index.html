@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Natsunoyoru">
 <meta property="og:description" content="There are many ways to kill the spaces. Some funky ways like minimized HTML and skipping the closing tag will also be mentioned. Note that many of these methods is using the inline-block property, whi">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-01T13:07:58.862Z">
+<meta property="og:updated_time" content="2018-07-01T13:10:36.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS Notes：Ways to Kill the Spaces in Horizontal Layout">
 <meta name="twitter:description" content="There are many ways to kill the spaces. Some funky ways like minimized HTML and skipping the closing tag will also be mentioned. Note that many of these methods is using the inline-block property, whi">
@@ -182,7 +182,7 @@
 <h3 id="1-Set-the-Font-Size-to-Zero"><a href="#1-Set-the-Font-Size-to-Zero" class="headerlink" title="1. Set the Font Size to Zero"></a>1. Set the Font Size to Zero</h3><ul>
 <li>Setting a <code>font-size</code> of 0 on the container itself (thus causing a blank space character to have zero width), and then resetting the size on the items.</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.navbar ul &#123;</span><br><span class="line">       /*set the font-size to 0*/</span><br><span class="line">       font-size: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .navbar li &#123;</span><br><span class="line">       /*reset the font-size*/</span><br><span class="line">       font-size: 16px;</span><br><span class="line">       font-size: 1rem;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.navbar ul &#123;</span><br><span class="line">   /*set the font-size to 0*/</span><br><span class="line">   font-size: 0;</span><br><span class="line">&#125;</span><br><span class="line">.navbar li &#123;</span><br><span class="line">   /*reset the font-size*/</span><br><span class="line">   font-size: 16px;</span><br><span class="line">   font-size: 1rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="1-2-Drawbacks"><a href="#1-2-Drawbacks" class="headerlink" title="1.2 Drawbacks"></a>1.2 Drawbacks</h4><ol>
 <li>In Android, the way mentioned above become no use at all. <a href="https://codepen.io/stowball/details/LsICH" target="_blank" rel="noopener">Reseach</a></li>
 <li>Be careful about  using <code>em</code>or<code>%</code>,  because they cascade the children would also have zero font size.</li>
