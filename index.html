@@ -6,20 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://natsunoyoru97.github.io/main">
-  <title>Natsunoyoru</title>
+  <title>natsunoyoru</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Some thoughts about Javascript, React and SVG">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Natsunoyoru">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="natsunoyoru">
 <meta property="og:url" content="https://natsunoyoru97.github.io/main/index.html">
-<meta property="og:site_name" content="Natsunoyoru">
-<meta property="og:description" content="Some thoughts about Javascript, React and SVG">
-<meta property="og:locale" content="default">
+<meta property="og:site_name" content="natsunoyoru">
+<meta property="og:locale" content="Chinese(Simplified)/ English">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Natsunoyoru">
-<meta name="twitter:description" content="Some thoughts about Javascript, React and SVG">
+<meta name="twitter:title" content="natsunoyoru">
   
-    <link rel="alternative" href="/atom.xml" title="Natsunoyoru" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="natsunoyoru" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -46,34 +43,34 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="" class="profilepic">
-			<img src="https://s33.postimg.cc/q2i865rnz/images.jpg" class="js-avatar">
+			<img src="https://s2.ax1x.com/2020/03/08/3z79tP.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="">Natsunoyoru</a></h1>
+		  <h1 class="header-author"><a href="">natsunoyoru</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Some random thoughts of web development here.</p>
+		<p class="header-subtitle">随便谈谈一点心得。目前在弄C、Linux和算法。</p>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/main/">Main</a></li>
+				<li><a href="/main/">所有文章</a></li>
 	        
-				<li><a href="/main/tech">Something about Tech</a></li>
+				<li><a href="/main/tech">技术相关</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">All articles</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">About Me</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
 		</nav>
@@ -104,13 +101,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://s33.postimg.cc/q2i865rnz/images.jpg" class="js-avatar">
+				<img src="https://s2.ax1x.com/2020/03/08/3z79tP.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Natsunoyoru</h1>
+			  <h1 class="header-author js-header-author">natsunoyoru</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Some random thoughts of web development here.<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>随便谈谈一点心得。目前在弄C、Linux和算法。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -138,9 +135,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/main/">Main</a></li>
+					<li style="width: 50%"><a href="/main/">所有文章</a></li>
 		        
-					<li style="width: 50%"><a href="/main/tech">Something about Tech</a></li>
+					<li style="width: 50%"><a href="/main/tech">技术相关</a></li>
 		        
 				</ul>
 			</nav>
@@ -182,35 +179,107 @@
 <h3 id="1-Set-the-Font-Size-to-Zero"><a href="#1-Set-the-Font-Size-to-Zero" class="headerlink" title="1. Set the Font Size to Zero"></a>1. Set the Font Size to Zero</h3><ul>
 <li>Setting a <code>font-size</code> of 0 on the container itself (thus causing a blank space character to have zero width), and then resetting the size on the items.</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.navbar</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">   <span class="comment">/*set the font-size to 0*/</span></span><br><span class="line">   <span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.navbar</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">   <span class="comment">/*reset the font-size*/</span></span><br><span class="line">   <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">   <span class="attribute">font-size</span>: <span class="number">1rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="CSS">        .navbar ul {
+           /*set the font-size to 0*/
+        font-size: 0;
+     }
+     .navbar li {
+           /*reset the font-size*/
+        font-size: 16px;
+        font-size: 1rem;
+     }
+</code></pre>
 <h4 id="1-2-Drawbacks"><a href="#1-2-Drawbacks" class="headerlink" title="1.2 Drawbacks"></a>1.2 Drawbacks</h4><ol>
 <li>In Android, the way mentioned above become no use at all. <a href="https://codepen.io/stowball/details/LsICH" target="_blank" rel="noopener">Reseach</a></li>
 <li>Be careful about  using <code>em</code>or<code>%</code>,  because they cascade the children would also have zero font size.</li>
 <li>If you use <code>@font-face</code> with this technique in Safari 5.0.x, the fonts will lose anti-aliasing. (If you set the font-size above 4px, it will clear the bug)<br><a href="https://cdn.css-tricks.com/wp-content/uploads/2012/04/Screen-Shot-2013-06-11-at-4.23.03-PM.png" target="_blank" rel="noopener">Screenshot</a><br><a href="http://jsfiddle.net/39GZd/7/" target="_blank" rel="noopener">Testcase</a></li>
 </ol>
 <h3 id="2-Negative-Margin"><a href="#2-Negative-Margin" class="headerlink" title="2. Negative Margin"></a>2. Negative Margin</h3><p>Setting negative margin is also useful to scoot the elements back. The font-size property may need to be adjusted based on font size of parent.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">4px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="CSS">    nav a {
+        display: inline-block;
+        margin-right: -4px;
+    }
+</code></pre>
 <h4 id="2-1-Drawbacks"><a href="#2-1-Drawbacks" class="headerlink" title="2.1 Drawbacks"></a>2.1 Drawbacks</h4><p>This technique is problematic in IE 6 &amp; 7. Also, the display breaks in other browsers when I run the pen in CodePen.</p>
 <p><a href="https://s15.postimg.cc/95ei4lni3/2018-07-01_7.17.00.png" target="_blank" rel="noopener">Screenshot in Firefox 61.0</a><br><a href="https://postimg.cc/image/6o2qxm693/" target="_blank" rel="noopener">Screenshot in Chrome 67.0.3396</a><br><a href="https://s15.postimg.cc/4xjpw0tu3/2018-07-01_7.28.09.png" target="_blank" rel="noopener">Screenshot in Safari 11.1</a></p>
 <p>When I set the margin-right less than -4 (like -5 or -6), it will clear the bug but the width of the container is smaller than it usually is. It quite relies on size assumption, and the display differs in different browsers.</p>
 <h3 id="3-Reset-the-Font-family-Property"><a href="#3-Reset-the-Font-family-Property" class="headerlink" title="3. Reset the Font-family Property"></a>3. Reset the Font-family Property</h3><p>Using <a href="https://matthewlein.com/articles/inline-block-fix" target="_blank" rel="noopener">a tiny custom font</a>, only containing a blank space character with a zero width on the parent element. The original <code>font-family</code> is then reset on the child elements. </p>
 <p>It works with any em-based elements, and does not rely on size assumptions.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="comment">/*clear the font-family property*/</span></span><br><span class="line">    <span class="attribute">font-family</span>: empty;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="comment">/*reset the font-family property*/</span></span><br><span class="line">    <span class="attribute">font-family</span>: serif;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#CCC</span>;</span><br><span class="line">    <span class="attribute">vertical-align</span>: top;</span><br><span class="line">    <span class="comment">/*fix the display problem in Firefox*/</span></span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">1px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="CSS">    nav ul {
+        /*clear the font-family property*/
+        font-family: empty;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    nav li {
+        /*reset the font-family property*/
+        font-family: serif;
+        display: inline-block;
+        background-color: #CCC;
+        vertical-align: top;
+        /*fix the display problem in Firefox*/
+        padding: 0 1px;
+    }
+</code></pre>
 <h4 id="3-1-Drawbacks"><a href="#3-1-Drawbacks" class="headerlink" title="3.1 Drawbacks"></a>3.1 Drawbacks</h4><ol>
 <li>It does not work on IE8 and the content is a bit closer in Firefox;</li>
 <li>Some extra k to download base64 font, ttf is needed for older android and svg for several versions old iOS;</li>
 <li>There is a tiny flash as it loads.</li>
 </ol>
 <h3 id="4-Float"><a href="#4-Float" class="headerlink" title="4. Float"></a>4. Float</h3><p>You can use the float property instead of using inline-block, but you cannot expect what it finally comes out.</p>
-<h3 id="5-Minimized-HTML"><a href="#5-Minimized-HTML" class="headerlink" title="5. Minimized HTML"></a>5. Minimized HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    one<span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    two<span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    three<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>or<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>one<span class="tag">&lt;/<span class="name">li</span></span></span><br><span class="line"><span class="tag">    &gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span>two<span class="tag">&lt;/<span class="name">li</span></span></span><br><span class="line"><span class="tag">    &gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span>three<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>or with comments:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>one<span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    --&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span>two<span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    --&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span>three<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="5-Minimized-HTML"><a href="#5-Minimized-HTML" class="headerlink" title="5. Minimized HTML"></a>5. Minimized HTML</h3><pre><code class="html">    &lt;ul&gt;
+        &lt;li&gt;
+        one&lt;/li&gt;&lt;li&gt;
+        two&lt;/li&gt;&lt;li&gt;
+        three&lt;/li&gt;
+    &lt;/ul&gt;
+</code></pre>
+<p>or</p>
+<pre><code class="HTML">    &lt;ul&gt;
+        &lt;li&gt;one&lt;/li
+        &gt;&lt;li&gt;two&lt;/li
+        &gt;&lt;li&gt;three&lt;/li&gt;
+    &lt;/ul&gt;
+</code></pre>
+<p>or with comments:</p>
+<pre><code class="HTML">    &lt;ul&gt;
+        &lt;li&gt;one&lt;/li&gt;&lt;!--
+        --&gt;&lt;li&gt;two&lt;/li&gt;&lt;!--
+        --&gt;&lt;li&gt;three&lt;/li&gt;
+    &lt;/ul&gt;
+</code></pre>
 <p>It is quite messy and hard to maintain although it does the trick. I am not a big fun of this technique anyway \( ツ)/</p>
-<h3 id="6-Skip-the-Closing-Tag"><a href="#6-Skip-the-Closing-Tag" class="headerlink" title="6. Skip the Closing Tag"></a>6. Skip the Closing Tag</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>one</span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>two</span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>three</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-Flexbox"><a href="#5-Flexbox" class="headerlink" title="5. Flexbox"></a>5. Flexbox</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;<span class="comment">/* OLD - iOS 6-, Safari 3.1-6 */</span></span><br><span class="line">    <span class="attribute">display</span>: -moz-box; <span class="comment">/* OLD - Firefox 19- (buggy but mostly works) */</span></span><br><span class="line">    <span class="attribute">display</span>: -ms-flexbox; <span class="comment">/* TWEENER - IE 10 */</span></span><br><span class="line">    <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* NEW - Chrome */</span></span><br><span class="line">    <span class="attribute">display</span>: flex; <span class="comment">/* NEW, Spec - Opera 12.1, Firefox 20+ */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-Skip-the-Closing-Tag"><a href="#6-Skip-the-Closing-Tag" class="headerlink" title="6. Skip the Closing Tag"></a>6. Skip the Closing Tag</h3><pre><code class="HTML">    &lt;ul&gt;
+        &lt;li&gt;one
+        &lt;li&gt;two
+        &lt;li&gt;three
+    &lt;/ul&gt;
+</code></pre>
+<h3 id="5-Flexbox"><a href="#5-Flexbox" class="headerlink" title="5. Flexbox"></a>5. Flexbox</h3><pre><code class="CSS">    ul {
+        display: -webkit-box;/* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox; /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Chrome */
+        display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    }
+</code></pre>
 <h4 id="5-1-Drawback"><a href="#5-1-Drawback" class="headerlink" title="5.1 Drawback"></a>5.1 Drawback</h4><p>It does not work on Opera below 12.1 and IE below 10.</p>
 <h3 id="6-Letter-spacing-and-Word-spacing-on-Grid-Container"><a href="#6-Letter-spacing-and-Word-spacing-on-Grid-Container" class="headerlink" title="6. Letter-spacing and Word-spacing on Grid Container"></a>6. Letter-spacing and Word-spacing on Grid Container</h3><p>This technique is used in Yahoo’s <a href="http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css" target="_blank" rel="noopener">YUI 3 CSS Grids</a>. I have no experience of YUI, maybe it worths a good try.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.yui3-g</span> &#123;</span><br><span class="line">    <span class="attribute">letter-spacing</span>: -<span class="number">0.31em</span>; <span class="comment">/* webkit */</span></span><br><span class="line">    *letter-spacing: normal; /* reset IE &lt; 8 */</span><br><span class="line">    <span class="selector-tag">word-spacing</span>: <span class="selector-tag">-0</span><span class="selector-class">.43em</span>; <span class="comment">/* IE &lt; 8 &amp;&amp; gecko */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yui3-u</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    zoom: 1; *display: inline; /* IE &lt; 8: fake inline-block */</span><br><span class="line">    <span class="selector-tag">letter-spacing</span>: <span class="selector-tag">normal</span>;</span><br><span class="line">    <span class="selector-tag">word-spacing</span>: <span class="selector-tag">normal</span>;</span><br><span class="line">    <span class="selector-tag">vertical-align</span>: <span class="selector-tag">top</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="CSS">    .yui3-g {
+        letter-spacing: -0.31em; /* webkit */
+        *letter-spacing: normal; /* reset IE &lt; 8 */
+        word-spacing: -0.43em; /* IE &lt; 8 &amp;&amp; gecko */
+    }
+
+    .yui3-u {
+        display: inline-block;
+        zoom: 1; *display: inline; /* IE &lt; 8: fake inline-block */
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+    }
+</code></pre>
 <h4 id="6-1-Drawbacks"><a href="#6-1-Drawbacks" class="headerlink" title="6.1 Drawbacks"></a>6.1 Drawbacks</h4><p>I tested the letter-spacing property and word-spacing property respectively, and the result of setting letter-spacing turned out to be really weird no matter in Firefox, Chrome or Safari: <a href="https://s15.postimg.cc/ufbb79inv/2018-07-01_9.25.26.png" target="_blank" rel="noopener">Screenshot</a></p>
 <p>The final result of testing word-spacing property is like the negative margin method, which is quite dependent on size assumptions.</p>
 <h2 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h2><ol>
@@ -477,11 +546,16 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 Natsunoyoru
+    		&copy; 2020 natsunoyoru
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
+
+        <link rel="stylesheet" href="./dracula.css">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
     </div>
   </div>
 </footer>
@@ -536,13 +610,13 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">All articles</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">About Me</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -563,15 +637,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music List</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Notes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Music List</a>
               </li>
             
             <div class="clearfix"></div>
@@ -622,7 +696,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">需要恶补很多计算机知识的前端小白。平时写的demo主要分享至codePen，摘录分享至github。&lt;br&gt; 英语水平够用，日语水平在阅读专业书籍和敬语方面还不够。&lt;br&gt; 不喜欢自我设限，我不是工科生或理科生，喜欢代码和喜欢政治学、哲学和心理学相关的书籍并不矛盾。 非技术相关的读书笔记会在豆瓣上更新。&lt;br&gt; 几近退坑的单机游戏玩家，也喜欢二次元，是无药可救的百合控。头像是偶像大师灰姑娘女主角岛村卯月。&lt;br&gt; P.S. English Introduction will be updated later after beautifying the fonts.</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">半路出家、需要恶补很多计算机知识的半吊子。 即将读计算机方向的研究生，写代码掰电脑很大程度上出于自己喜欢，但也喜欢代码之外的许多事物。 非技术相关的读书笔记会在豆瓣上更新。&lt;br&gt; 头像是邦邦的mskk，她们太好了！&lt;br&gt;</div>
   	  	
     	</section>
     
