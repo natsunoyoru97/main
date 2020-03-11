@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://natsunoyoru97.github.io">
-  <title>CSS Notes：Ways to Kill the Spaces in Horizontal Layout | natsunoyoru</title>
+  <title>Archives: 2020 | natsunoyoru</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="There are many ways to kill the spaces. Some funky ways like minimized HTML and skipping the closing tag will also be mentioned. Note that many of these methods is using the inline-block property, whi">
-<meta name="keywords" content="CSS,Notes">
-<meta property="og:type" content="article">
-<meta property="og:title" content="CSS Notes：Ways to Kill the Spaces in Horizontal Layout">
-<meta property="og:url" content="https://natsunoyoru97.github.io/2018/07/01/CSS-Notes：Ways-to-Kill-the-Spaces-in-Horizontal-Layout/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="natsunoyoru">
+<meta property="og:url" content="https://natsunoyoru97.github.io/archives/2020/index.html">
 <meta property="og:site_name" content="natsunoyoru">
-<meta property="og:description" content="There are many ways to kill the spaces. Some funky ways like minimized HTML and skipping the closing tag will also be mentioned. Note that many of these methods is using the inline-block property, whi">
 <meta property="og:locale" content="Chinese(Simplified)/ English">
-<meta property="og:updated_time" content="2020-03-09T12:22:29.215Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS Notes：Ways to Kill the Spaces in Horizontal Layout">
-<meta name="twitter:description" content="There are many ways to kill the spaces. Some funky ways like minimized HTML and skipping the closing tag will also be mentioned. Note that many of these methods is using the inline-block property, whi">
+<meta name="twitter:title" content="natsunoyoru">
   
     <link rel="alternative" href="/atom.xml" title="natsunoyoru" type="application/atom+xml">
   
@@ -153,289 +148,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS-Notes：Ways-to-Kill-the-Spaces-in-Horizontal-Layout" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      CSS Notes：Ways to Kill the Spaces in Horizontal Layout
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/03/11/2020想做的一些改变/" class="archive-article-date">
+  	<time datetime="2020-03-11T12:44:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/03/11/2020想做的一些改变/">2020想做的一些改变</a>
     </h1>
   
 
-        
-        <a href="/2018/07/01/CSS-Notes：Ways-to-Kill-the-Spaces-in-Horizontal-Layout/" class="archive-article-date">
-  	<time datetime="2018-07-01T14:16:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>There are many ways to kill the spaces. Some funky ways like minimized HTML and skipping the closing tag will also be mentioned.</p>
-<p>Note that many of these methods is using the <code>inline-block</code> property, which is only of use on <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank" rel="noopener">inline elements</a>.</p>
-<h3 id="1-Set-the-Font-Size-to-Zero"><a href="#1-Set-the-Font-Size-to-Zero" class="headerlink" title="1. Set the Font Size to Zero"></a>1. Set the Font Size to Zero</h3><ul>
-<li>Setting a <code>font-size</code> of 0 on the container itself (thus causing a blank space character to have zero width), and then resetting the size on the items.</li>
-</ul>
-<pre><code class="CSS">     .navbar ul {
-           /*set the font-size to 0*/
-        font-size: 0;
-     }
-     .navbar li {
-           /*reset the font-size*/
-        font-size: 16px;
-        font-size: 1rem;
-     }
-</code></pre>
-<h4 id="1-2-Drawbacks"><a href="#1-2-Drawbacks" class="headerlink" title="1.2 Drawbacks"></a>1.2 Drawbacks</h4><ol>
-<li>In Android, the way mentioned above become no use at all. <a href="https://codepen.io/stowball/details/LsICH" target="_blank" rel="noopener">Reseach</a></li>
-<li>Be careful about  using <code>em</code>or<code>%</code>,  because they cascade the children would also have zero font size.</li>
-<li>If you use <code>@font-face</code> with this technique in Safari 5.0.x, the fonts will lose anti-aliasing. (If you set the font-size above 4px, it will clear the bug)<br><a href="https://cdn.css-tricks.com/wp-content/uploads/2012/04/Screen-Shot-2013-06-11-at-4.23.03-PM.png" target="_blank" rel="noopener">Screenshot</a><br><a href="http://jsfiddle.net/39GZd/7/" target="_blank" rel="noopener">Testcase</a></li>
-</ol>
-<h3 id="2-Negative-Margin"><a href="#2-Negative-Margin" class="headerlink" title="2. Negative Margin"></a>2. Negative Margin</h3><p>Setting negative margin is also useful to scoot the elements back. The font-size property may need to be adjusted based on font size of parent.</p>
-<pre><code class="CSS">    nav a {
-        display: inline-block;
-        margin-right: -4px;
-    }
-</code></pre>
-<h4 id="2-1-Drawbacks"><a href="#2-1-Drawbacks" class="headerlink" title="2.1 Drawbacks"></a>2.1 Drawbacks</h4><p>This technique is problematic in IE 6 &amp; 7. Also, the display breaks in other browsers when I run the pen in CodePen.</p>
-<p><a href="https://s15.postimg.cc/95ei4lni3/2018-07-01_7.17.00.png" target="_blank" rel="noopener">Screenshot in Firefox 61.0</a><br><a href="https://postimg.cc/image/6o2qxm693/" target="_blank" rel="noopener">Screenshot in Chrome 67.0.3396</a><br><a href="https://s15.postimg.cc/4xjpw0tu3/2018-07-01_7.28.09.png" target="_blank" rel="noopener">Screenshot in Safari 11.1</a></p>
-<p>When I set the margin-right less than -4 (like -5 or -6), it will clear the bug but the width of the container is smaller than it usually is. It quite relies on size assumption, and the display differs in different browsers.</p>
-<h3 id="3-Reset-the-Font-family-Property"><a href="#3-Reset-the-Font-family-Property" class="headerlink" title="3. Reset the Font-family Property"></a>3. Reset the Font-family Property</h3><p>Using <a href="https://matthewlein.com/articles/inline-block-fix" target="_blank" rel="noopener">a tiny custom font</a>, only containing a blank space character with a zero width on the parent element. The original <code>font-family</code> is then reset on the child elements. </p>
-<p>It works with any em-based elements, and does not rely on size assumptions.</p>
-<pre><code class="CSS">    nav ul {
-        /*clear the font-family property*/
-        font-family: empty;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    nav li {
-        /*reset the font-family property*/
-        font-family: serif;
-        display: inline-block;
-        background-color: #CCC;
-        vertical-align: top;
-        /*fix the display problem in Firefox*/
-        padding: 0 1px;
-    }
-</code></pre>
-<h4 id="3-1-Drawbacks"><a href="#3-1-Drawbacks" class="headerlink" title="3.1 Drawbacks"></a>3.1 Drawbacks</h4><ol>
-<li>It does not work on IE8 and the content is a bit closer in Firefox;</li>
-<li>Some extra k to download base64 font, ttf is needed for older android and svg for several versions old iOS;</li>
-<li>There is a tiny flash as it loads.</li>
-</ol>
-<h3 id="4-Float"><a href="#4-Float" class="headerlink" title="4. Float"></a>4. Float</h3><p>You can use the float property instead of using inline-block, but you cannot expect what it finally comes out.</p>
-<h3 id="5-Minimized-HTML"><a href="#5-Minimized-HTML" class="headerlink" title="5. Minimized HTML"></a>5. Minimized HTML</h3><pre><code class="html">    &lt;ul&gt;
-        &lt;li&gt;
-        one&lt;/li&gt;&lt;li&gt;
-        two&lt;/li&gt;&lt;li&gt;
-        three&lt;/li&gt;
-    &lt;/ul&gt;
-</code></pre>
-<p>or</p>
-<pre><code class="HTML">    &lt;ul&gt;
-        &lt;li&gt;one&lt;/li
-        &gt;&lt;li&gt;two&lt;/li
-        &gt;&lt;li&gt;three&lt;/li&gt;
-    &lt;/ul&gt;
-</code></pre>
-<p>or with comments:</p>
-<pre><code class="HTML">    &lt;ul&gt;
-        &lt;li&gt;one&lt;/li&gt;&lt;!--
-        --&gt;&lt;li&gt;two&lt;/li&gt;&lt;!--
-        --&gt;&lt;li&gt;three&lt;/li&gt;
-    &lt;/ul&gt;
-</code></pre>
-<p>It is quite messy and hard to maintain although it does the trick. I am not a big fun of this technique anyway \( ツ)/</p>
-<h3 id="6-Skip-the-Closing-Tag"><a href="#6-Skip-the-Closing-Tag" class="headerlink" title="6. Skip the Closing Tag"></a>6. Skip the Closing Tag</h3><pre><code class="HTML">    &lt;ul&gt;
-        &lt;li&gt;one
-        &lt;li&gt;two
-        &lt;li&gt;three
-    &lt;/ul&gt;
-</code></pre>
-<h3 id="5-Flexbox"><a href="#5-Flexbox" class="headerlink" title="5. Flexbox"></a>5. Flexbox</h3><pre><code class="CSS">    ul {
-        display: -webkit-box;/* OLD - iOS 6-, Safari 3.1-6 */
-        display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-        display: -ms-flexbox; /* TWEENER - IE 10 */
-        display: -webkit-flex; /* NEW - Chrome */
-        display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    }
-</code></pre>
-<h4 id="5-1-Drawback"><a href="#5-1-Drawback" class="headerlink" title="5.1 Drawback"></a>5.1 Drawback</h4><p>It does not work on Opera below 12.1 and IE below 10.</p>
-<h3 id="6-Letter-spacing-and-Word-spacing-on-Grid-Container"><a href="#6-Letter-spacing-and-Word-spacing-on-Grid-Container" class="headerlink" title="6. Letter-spacing and Word-spacing on Grid Container"></a>6. Letter-spacing and Word-spacing on Grid Container</h3><p>This technique is used in Yahoo’s <a href="http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css" target="_blank" rel="noopener">YUI 3 CSS Grids</a>. I have no experience of YUI, maybe it worths a good try.</p>
-<pre><code class="CSS">    .yui3-g {
-        letter-spacing: -0.31em; /* webkit */
-        *letter-spacing: normal; /* reset IE &lt; 8 */
-        word-spacing: -0.43em; /* IE &lt; 8 &amp;&amp; gecko */
-    }
-
-    .yui3-u {
-        display: inline-block;
-        zoom: 1; *display: inline; /* IE &lt; 8: fake inline-block */
-        letter-spacing: normal;
-        word-spacing: normal;
-        vertical-align: top;
-    }
-</code></pre>
-<h4 id="6-1-Drawbacks"><a href="#6-1-Drawbacks" class="headerlink" title="6.1 Drawbacks"></a>6.1 Drawbacks</h4><p>I tested the letter-spacing property and word-spacing property respectively, and the result of setting letter-spacing turned out to be really weird no matter in Firefox, Chrome or Safari: <a href="https://s15.postimg.cc/ufbb79inv/2018-07-01_9.25.26.png" target="_blank" rel="noopener">Screenshot</a></p>
-<p>The final result of testing word-spacing property is like the negative margin method, which is quite dependent on size assumptions.</p>
-<h2 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h2><ol>
-<li>A Complete Guide to Flexbox, Chris Coyier: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></li>
-<li>MDN web docs - Inline elements: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements</a></li>
-<li>Using Flexbox: Mixing Old and New for the Best Browser Support, Chris Coyier: <a href="https://css-tricks.com/using-flexbox/" target="_blank" rel="noopener">https://css-tricks.com/using-flexbox/</a></li>
-<li>Ways to handle spaces between inline-block elements, Chris Coyier: <a href="https://codepen.io/chriscoyier/pen/hmlqF" target="_blank" rel="noopener">https://codepen.io/chriscoyier/pen/hmlqF</a></li>
-</ol>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
-<li>Another way to kill space between inline-blocks, Matthew Lein: <a href="https://matthewlein.com/articles/inline-block-fix" target="_blank" rel="noopener">https://matthewlein.com/articles/inline-block-fix</a></li>
-<li>CSS Mastery (Third Edition), Andy Budd &amp; Emil Bjorklund, Chapter 6</li>
-<li>Fighting the Space Between Inline Block Elements, Chris Coyier: <a href="https://css-tricks.com/fighting-the-space-between-inline-block-elements/" target="_blank" rel="noopener">https://css-tricks.com/fighting-the-space-between-inline-block-elements/</a> </li>
-<li>YUI 3 CSS Grids: <a href="http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css" target="_blank" rel="noopener">http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Notes</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术相关//" class="article-tag-list-link color5">技术相关</a>
-        		</li>
-      		
-		</ul>
-	</div>
+          
 
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://natsunoyoru97.github.io/2018/07/01/CSS-Notes：Ways-to-Kill-the-Spaces-in-Horizontal-Layout/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/03/11/2020想做的一些改变/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          2020想做的一些改变
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/06/20/music-list/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">My Favourite Electronic Music List</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -463,8 +233,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
