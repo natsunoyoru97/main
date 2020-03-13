@@ -183,7 +183,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。</p>
-<h1 id="情况是？"><a href="#情况是？" class="headerlink" title="情况是？"></a>情况是？</h1><h3 id="3-1-我还没有add"><a href="#3-1-我还没有add" class="headerlink" title="3.1 我还没有add"></a>3.1 我还没有add</h3><p>这就很简单了，一行</p>
+<h1 id="情况是？"><a href="#情况是？" class="headerlink" title="情况是？"></a>情况是？</h1><h3 id="1-我还没有add"><a href="#1-我还没有add" class="headerlink" title="1. 我还没有add"></a>1. 我还没有add</h3><p>这就很简单了，一行</p>
 <pre><code class="shell">git checkout -- &lt;file&gt;
 
 </code></pre>
@@ -191,7 +191,7 @@
 <pre><code class="shell">git clean -[flag]
 
 </code></pre>
-<h3 id="3-2-我已经add了，但还没有commit"><a href="#3-2-我已经add了，但还没有commit" class="headerlink" title="3.2 我已经add了，但还没有commit"></a>3.2 我已经add了，但还没有commit</h3><p>用</p>
+<h3 id="2-我已经add了，但还没有commit"><a href="#2-我已经add了，但还没有commit" class="headerlink" title="2. 我已经add了，但还没有commit"></a>2. 我已经add了，但还没有commit</h3><p>用</p>
 <pre><code class="shell">git reset HEAD &lt;file&gt;
 
 </code></pre>
@@ -201,7 +201,7 @@
 
 </code></pre>
 <p>清掉工具树并让你的git文件与<code>HEAD</code>状态保持一致。</p>
-<h3 id="3-3-我已经commit了，但还没有push"><a href="#3-3-我已经commit了，但还没有push" class="headerlink" title="3.3 我已经commit了，但还没有push"></a>3.3 我已经commit了，但还没有push</h3><p>先查看自己的本地分支比远程分支提前了多少个提交，再按数量回退即可。这个时候会回退到add之前的状态。</p>
+<h3 id="3-我已经commit了，但还没有push"><a href="#3-我已经commit了，但还没有push" class="headerlink" title="3. 我已经commit了，但还没有push"></a>3. 我已经commit了，但还没有push</h3><p>先查看自己的本地分支比远程分支提前了多少个提交，再按数量回退即可。这个时候会回退到add之前的状态。</p>
 <p>回退操作可以有如下三种：</p>
 <pre><code class="shell">git reset HEAD^         //只是提前一个提交
 git reset HEAD~[count]  //提前count次提交
@@ -213,13 +213,13 @@ git reset [hashcode]    //回退到哈希值为hashcode的提交
 
 </code></pre>
 <p>查看。</p>
-<h3 id="3-4-我已经push了"><a href="#3-4-我已经push了" class="headerlink" title="3.4 我已经push了"></a>3.4 我已经push了</h3><p>那就没办法了，返回你以前的commit再强行<code>push</code>吧。</p>
+<h3 id="4-我已经push了"><a href="#4-我已经push了" class="headerlink" title="4. 我已经push了"></a>4. 我已经push了</h3><p>那就没办法了，返回你以前的commit再强行<code>push</code>吧。</p>
 <p>先回退自己的本地分支（方法参照3.3），再用</p>
 <pre><code class="shell">git push -force
 
 </code></pre>
 <p>把回退的本地版本强行推送至远程分支。这么做有效是有效，但用了之后<strong>一起开发的小伙伴的commit全军覆没</strong>，把我吓得瑟瑟发抖，最后还得向她连声道歉，真的是怕了。<strong>在多人合作的场合务必慎用</strong>。<br>关于公共的远程分支的回滚方法<a href="https://www.cnblogs.com/qlqwjy/p/8179684.html" target="_blank" rel="noopener">有篇文章</a>讲得很好，大家可以去看看。</p>
-<h1 id="2-推荐"><a href="#2-推荐" class="headerlink" title="2. 推荐"></a>2. 推荐</h1><p>我也没多少用git的经验，只是之前有看过一点git相关的手册，对git的状态控制略知一二。这里推荐<strong><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《精通Git》</a></strong>，无论是只会图形界面的简单操作的小白还是对git有一定了解的进阶学习者，这本书都很合适。另外有一款网页游戏（说游戏似乎不大合适）叫 <strong><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">《学习Git分支》</a></strong>，比较适合对git了解很少的新手。</p>
+<h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><p>我也没多少用git的经验，只是之前有看过一点git相关的手册，对git的状态控制略知一二。这里推荐<strong><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《精通Git》</a></strong>，无论是只会图形界面的简单操作的小白还是对git有一定了解的进阶学习者，这本书都很合适。另外有一款网页游戏（说游戏似乎不大合适）叫 <strong><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">《学习Git分支》</a></strong>，比较适合对git了解很少的新手。</p>
 
       
 
@@ -895,19 +895,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Notes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
               </li>
              
               <li class="article-tag-list-item">
