@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="natsunoyoru">
 <meta property="og:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。 情况是？3.1 我还没有add这就很简单了，一行 git checkout -- &amp;lt;file&amp;gt;   就可以丢弃修改。要想删除untracked的文件需要用 git clean -[flag]   3.2 我已经add了，但还没有commit用 git reset H">
 <meta property="og:locale" content="Chinese(Simplified)/ English">
-<meta property="og:updated_time" content="2020-03-13T13:23:48.594Z">
+<meta property="og:updated_time" content="2020-03-13T13:30:01.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常见问题之一：我想撤回之前的提交，该怎么办？">
 <meta name="twitter:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。 情况是？3.1 我还没有add这就很简单了，一行 git checkout -- &amp;lt;file&amp;gt;   就可以丢弃修改。要想删除untracked的文件需要用 git clean -[flag]   3.2 我已经add了，但还没有commit用 git reset H">
@@ -221,7 +221,7 @@ git reset [hashcode]    //回退到哈希值为hashcode的提交
 <pre><code class="shell">git push -force
 
 </code></pre>
-<p>把回退的本地版本强行推送只远程分支。这么做有效是有效，但用了之后<strong>一起开发的小伙伴的commit全军覆没</strong>，把我吓得瑟瑟发抖，最后还得向她连声道歉，真的是怕了。<strong>在多人合作的场合务必慎用</strong>。<br>关于公共的远程分支的回滚方法<a href="https://www.cnblogs.com/qlqwjy/p/8179684.html" target="_blank" rel="noopener">有篇文章</a>讲得很好，大家可以去看看。</p>
+<p>把回退的本地版本强行推送至远程分支。这么做有效是有效，但用了之后<strong>一起开发的小伙伴的commit全军覆没</strong>，把我吓得瑟瑟发抖，最后还得向她连声道歉，真的是怕了。<strong>在多人合作的场合务必慎用</strong>。<br>关于公共的远程分支的回滚方法<a href="https://www.cnblogs.com/qlqwjy/p/8179684.html" target="_blank" rel="noopener">有篇文章</a>讲得很好，大家可以去看看。</p>
 <h1 id="2-推荐"><a href="#2-推荐" class="headerlink" title="2. 推荐"></a>2. 推荐</h1><p>我也没多少用git的经验，只是之前有看过一点git相关的手册，对git的状态控制略知一二。这里推荐<strong><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《精通Git》</a></strong>，无论是只会图形界面的简单操作的小白还是对git有一定了解的进阶学习者，这本书都很合适。另外有一款网页游戏（说游戏似乎不大合适）叫 <strong><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">《学习Git分支》</a></strong>，比较适合对git了解很少的新手。</p>
 
       
@@ -478,6 +478,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -486,19 +490,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">电子书分享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Notes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">电子书分享</a>
               </li>
             
             <div class="clearfix"></div>
