@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="natsunoyoru97.github.io">
-  <title>Git常见问题之一：我想撤回之前的提交，该怎么办？ | natsunoyoru</title>
+  <title>奇怪的魔改增加了！在mac终端上显示奇怪的MOTD | natsunoyoru</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。 情况是？1. 我还没有add这就很简单了，一行 git checkout -- &amp;lt;file&amp;gt;   就可以丢弃修改。要想删除untracked的文件需要用 git clean -[flag]   2. 我已经add了，但还没有commit用 git reset HEA">
-<meta name="keywords" content="git,命令行">
+  <meta name="description" content="想让自己的登录界面显示点什么东西，但又不想用neofetch，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：  什么是MOTDMOTD，全称Message of the Day，也就是终端上一登录就会显示的玩意，而一般MOTD是空的，也就是登录时不会显示任何信息。要想自定义登录消息，我们需要对MOT">
+<meta name="keywords" content="命令行,奇怪的魔改增加了！,Unix,MacOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git常见问题之一：我想撤回之前的提交，该怎么办？">
-<meta property="og:url" content="natsunoyoru97.github.io/2020/03/13/Git常见问题之一：我想撤回之前的提交，该怎么办？/index.html">
+<meta property="og:title" content="奇怪的魔改增加了！在mac终端上显示奇怪的MOTD">
+<meta property="og:url" content="natsunoyoru97.github.io/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/index.html">
 <meta property="og:site_name" content="natsunoyoru">
-<meta property="og:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。 情况是？1. 我还没有add这就很简单了，一行 git checkout -- &amp;lt;file&amp;gt;   就可以丢弃修改。要想删除untracked的文件需要用 git clean -[flag]   2. 我已经add了，但还没有commit用 git reset HEA">
+<meta property="og:description" content="想让自己的登录界面显示点什么东西，但又不想用neofetch，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：  什么是MOTDMOTD，全称Message of the Day，也就是终端上一登录就会显示的玩意，而一般MOTD是空的，也就是登录时不会显示任何信息。要想自定义登录消息，我们需要对MOT">
 <meta property="og:locale" content="Chinese(Simplified)/ English">
-<meta property="og:updated_time" content="2020-03-13T13:31:23.935Z">
+<meta property="og:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-18下午6.54.04.png">
+<meta property="og:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-18下午11.42.03.png">
+<meta property="og:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-19上午12.37.42.png">
+<meta property="og:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/p253410151.jpg">
+<meta property="og:updated_time" content="2020-03-19T12:27:32.194Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git常见问题之一：我想撤回之前的提交，该怎么办？">
-<meta name="twitter:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。 情况是？1. 我还没有add这就很简单了，一行 git checkout -- &amp;lt;file&amp;gt;   就可以丢弃修改。要想删除untracked的文件需要用 git clean -[flag]   2. 我已经add了，但还没有commit用 git reset HEA">
+<meta name="twitter:title" content="奇怪的魔改增加了！在mac终端上显示奇怪的MOTD">
+<meta name="twitter:description" content="想让自己的登录界面显示点什么东西，但又不想用neofetch，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：  什么是MOTDMOTD，全称Message of the Day，也就是终端上一登录就会显示的玩意，而一般MOTD是空的，也就是登录时不会显示任何信息。要想自定义登录消息，我们需要对MOT">
+<meta name="twitter:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-18下午6.54.04.png">
   
     <link rel="alternative" href="/atom.xml" title="natsunoyoru" type="application/atom+xml">
   
@@ -165,64 +170,245 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git常见问题之一：我想撤回之前的提交，该怎么办？" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-奇怪的魔改增加了！在mac终端上显示奇怪的MOTD" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git常见问题之一：我想撤回之前的提交，该怎么办？
+      奇怪的魔改增加了！在mac终端上显示奇怪的MOTD
     </h1>
   
 
         
-        <a href="/2020/03/13/Git常见问题之一：我想撤回之前的提交，该怎么办？/" class="archive-article-date">
-  	<time datetime="2020-03-13T13:20:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
+        <a href="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/" class="archive-article-date">
+  	<time datetime="2020-03-18T12:02:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。</p>
-<h1 id="情况是？"><a href="#情况是？" class="headerlink" title="情况是？"></a>情况是？</h1><h3 id="1-我还没有add"><a href="#1-我还没有add" class="headerlink" title="1. 我还没有add"></a>1. 我还没有add</h3><p>这就很简单了，一行</p>
-<pre><code class="shell">git checkout -- &lt;file&gt;
-
+        <p>想让自己的登录界面显示点什么东西，但又不想用<a href="https://github.com/dylanaraps/neofetch" target="_blank" rel="noopener">neofetch</a>，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：</p>
+<p><img src="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-18下午6.54.04.png" alt=""></p>
+<h3 id="什么是MOTD"><a href="#什么是MOTD" class="headerlink" title="什么是MOTD"></a>什么是MOTD</h3><p>MOTD，全称Message of the Day，也就是终端上一登录就会显示的玩意，而一般MOTD是空的，也就是登录时不会显示任何信息。要想自定义登录消息，我们需要对MOTD做一些改动。MOTD的位置一般在<code>/etc/motd</code>。</p>
+<h3 id="在MOTD里加一点文字"><a href="#在MOTD里加一点文字" class="headerlink" title="在MOTD里加一点文字"></a>在MOTD里加一点文字</h3><p>一般的资料都会提到这样一条命令：</p>
+<pre><code class="Shell">sudo pico /etc/motd
 </code></pre>
-<p>就可以丢弃修改。要想删除untracked的文件需要用</p>
-<pre><code class="shell">git clean -[flag]
-
+<p>这里的<code>pico</code>是终端的一种编辑器，实际操作时用哪种编辑器都随便，我就因为自己的使用习惯用的vim。打开vim，编辑<code>/etc/motd</code>，加入文字，完事。</p>
+<h4 id="一些好用的插件"><a href="#一些好用的插件" class="headerlink" title="一些好用的插件"></a>一些好用的插件</h4><ul>
+<li><a href="http://cowsay.morecode.org/" target="_blank" rel="noopener">cowsay</a>，显示一头牛+自定义的文本</li>
+<li><a href="http://www.figlet.org/" target="_blank" rel="noopener">figlet</a>，定制文本字符画</li>
+</ul>
+<h3 id="给文字上点色"><a href="#给文字上点色" class="headerlink" title="给文字上点色"></a>给文字上点色</h3><p>我在这个环节上卡的比较久，主要是发现用vim编辑无法正确解析设置文字属性的字符串，又暂时没有找到其它比较可行的方法。</p>
+<h4 id="尝试1-旁门邪道（误）"><a href="#尝试1-旁门邪道（误）" class="headerlink" title="尝试1:旁门邪道（误）"></a>尝试1:旁门邪道（误）</h4><p>我先试了一招，在其它目录上建了一个sh脚本，用vim编辑这个脚本，最后把它的内容复制到MOTD。</p>
+<pre><code class="Shell">touch /tmp/motd.sh &amp;&amp; chmod +x /tmp/motd.sh
+# Editing the script
+sudo sh -c &#39;/tmp/mtod.sh &gt; /etc/motd&#39;
 </code></pre>
-<h3 id="2-我已经add了，但还没有commit"><a href="#2-我已经add了，但还没有commit" class="headerlink" title="2. 我已经add了，但还没有commit"></a>2. 我已经add了，但还没有commit</h3><p>用</p>
-<pre><code class="shell">git reset HEAD &lt;file&gt;
-
+<p>编辑过的sh文件如下图所示：</p>
+<p><img src="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-18下午11.42.03.png" alt=""></p>
+<p>从代码中不难看出来，正是下面的代码决定了不同文字的颜色：</p>
+<pre><code class="Shell">$(tput setaf [number])
 </code></pre>
-<p>丢弃已经add的修改。这时就回退到3.1中的情景了，按照3.1的操作做即可。</p>
-<p>若想同时存储本地的修改，则用</p>
-<pre><code class="shell">git stash
-
+<p>而数字与颜色的对应关系如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数字</th>
+<th style="text-align:center">颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">灰色</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">红色</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">绿色</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">黄色</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">蓝色</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">紫红色</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">青色</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">白色</td>
+</tr>
+</tbody>
+</table>
+<p>这种方法既有优点有有缺点，至少在我输入命令的时候还是觉得太繁琐了。不过设置动态MOTD应该只能通过这种方式了吧。</p>
+<h4 id="尝试2-编辑器的一次性编辑方法（仅限vim）"><a href="#尝试2-编辑器的一次性编辑方法（仅限vim）" class="headerlink" title="尝试2:编辑器的一次性编辑方法（仅限vim）"></a>尝试2:编辑器的一次性编辑方法（仅限vim）</h4><p>在半成品完成后，我又回头看了一下MOTD里面的内容，结果是这样的：</p>
+<p><img src="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-19上午12.37.42.png" alt=""></p>
+<p>提示终端添加颜色和背景的语句格式是：</p>
+<pre><code class="Shell">&lt;ESC&gt;[{attr};{fg};{bg}m
 </code></pre>
-<p>清掉工具树并让你的git文件与<code>HEAD</code>状态保持一致。</p>
-<h3 id="3-我已经commit了，但还没有push"><a href="#3-我已经commit了，但还没有push" class="headerlink" title="3. 我已经commit了，但还没有push"></a>3. 我已经commit了，但还没有push</h3><p>先查看自己的本地分支比远程分支提前了多少个提交，再按数量回退即可。这个时候会回退到add之前的状态。</p>
-<p>回退操作可以有如下三种：</p>
-<pre><code class="shell">git reset HEAD^         //只是提前一个提交
-git reset HEAD~[count]  //提前count次提交
-git reset [hashcode]    //回退到哈希值为hashcode的提交
-
-</code></pre>
-<p>其中每次提交的哈希值可以通过</p>
-<pre><code class="shell">git reflog
-
-</code></pre>
-<p>查看。</p>
-<h3 id="4-我已经push了"><a href="#4-我已经push了" class="headerlink" title="4. 我已经push了"></a>4. 我已经push了</h3><p>那就没办法了，返回你以前的commit再强行<code>push</code>吧。</p>
-<p>先回退自己的本地分支（方法参照3.3），再用</p>
-<pre><code class="shell">git push -force
-
-</code></pre>
-<p>把回退的本地版本强行推送至远程分支。这么做有效是有效，但用了之后<strong>一起开发的小伙伴的commit全军覆没</strong>，把我吓得瑟瑟发抖，最后还得向她连声道歉，真的是怕了。<strong>在多人合作的场合务必慎用</strong>。<br>关于公共的远程分支的回滚方法<a href="https://www.cnblogs.com/qlqwjy/p/8179684.html" target="_blank" rel="noopener">有篇文章</a>讲得很好，大家可以去看看。</p>
-<h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><p>我也没多少用git的经验，只是之前有看过一点git相关的手册，对git的状态控制略知一二。这里推荐<strong><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《精通Git》</a></strong>，无论是只会图形界面的简单操作的小白还是对git有一定了解的进阶学习者，这本书都很合适。另外有一款网页游戏（说游戏似乎不大合适）叫 <strong><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">《学习Git分支》</a></strong>，比较适合对git了解很少的新手。</p>
+<p>注意截图里面深灰色的字符，那些字符代表的是vim的escape字符，<strong>输入是Ctrl + v + Esc、显示是<code>^[</code>、而且复制粘贴会失效</strong>，结尾还有<code>&lt;ESC&gt;(B&lt;ESC&gt;[m</code>这一行。也就是说，之前一直纠结的parsing问题，还真是因为把vim的escape字符给弄错了？</p>
+<p>经过实验结果就是，that’s it！破案！</p>
+<h3 id="终端MOTD的自定义属性"><a href="#终端MOTD的自定义属性" class="headerlink" title="终端MOTD的自定义属性"></a>终端MOTD的自定义属性</h3><p>另外编辑器支持其它自定义属性，可以参考这个表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">{attr}</th>
+<th style="text-align:center">属性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">恢复通用模式</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">增加亮度</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">淡化</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">下划线</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">闪烁</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">反转</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">隐藏</td>
+</tr>
+<tr>
+<td style="text-align:center">22</td>
+<td style="text-align:center">普通</td>
+</tr>
+<tr>
+<td style="text-align:center">24</td>
+<td style="text-align:center">取消下划线</td>
+</tr>
+<tr>
+<td style="text-align:center">25</td>
+<td style="text-align:center">取消闪烁</td>
+</tr>
+<tr>
+<td style="text-align:center">27</td>
+<td style="text-align:center">取消反转</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">{fg}</th>
+<th style="text-align:center">字体颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">30</td>
+<td style="text-align:center">黑色</td>
+</tr>
+<tr>
+<td style="text-align:center">31</td>
+<td style="text-align:center">红色</td>
+</tr>
+<tr>
+<td style="text-align:center">32</td>
+<td style="text-align:center">绿色</td>
+</tr>
+<tr>
+<td style="text-align:center">33</td>
+<td style="text-align:center">黄色</td>
+</tr>
+<tr>
+<td style="text-align:center">34</td>
+<td style="text-align:center">蓝色</td>
+</tr>
+<tr>
+<td style="text-align:center">35</td>
+<td style="text-align:center">紫红色</td>
+</tr>
+<tr>
+<td style="text-align:center">36</td>
+<td style="text-align:center">青色</td>
+</tr>
+<tr>
+<td style="text-align:center">37</td>
+<td style="text-align:center">白色</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">{bg}</th>
+<th style="text-align:center">背景颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">40</td>
+<td style="text-align:center">黑色</td>
+</tr>
+<tr>
+<td style="text-align:center">41</td>
+<td style="text-align:center">红色</td>
+</tr>
+<tr>
+<td style="text-align:center">42</td>
+<td style="text-align:center">绿色</td>
+</tr>
+<tr>
+<td style="text-align:center">43</td>
+<td style="text-align:center">黄色</td>
+</tr>
+<tr>
+<td style="text-align:center">44</td>
+<td style="text-align:center">蓝色</td>
+</tr>
+<tr>
+<td style="text-align:center">45</td>
+<td style="text-align:center">紫红色</td>
+</tr>
+<tr>
+<td style="text-align:center">46</td>
+<td style="text-align:center">青色</td>
+</tr>
+<tr>
+<td style="text-align:center">47</td>
+<td style="text-align:center">白色</td>
+</tr>
+</tbody>
+</table>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="https://unix.stackexchange.com/questions/139056/how-do-i-use-colors-in-the-motd" target="_blank" rel="noopener">How do I use colors in the MOTD?</a></li>
+<li><a href="https://stackoverflow.com/questions/28771199/bold-text-and-change-color-of-text-for-motd-in-nano-on-osx" target="_blank" rel="noopener">Bold text and change color of text for MOTD in nano on OSX?</a></li>
+<li><a href="https://www.cnblogs.com/gageshen/p/11565980.html" target="_blank" rel="noopener">Linux中创建自己的MOTD</a></li>
+<li><a href="http://www.mewbies.com/motd_console_codes_color_chart_in_color_black_background.htm" target="_blank" rel="noopener">Console Color and Format Codes</a></li>
+</ul>
+<p><img src="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/p253410151.jpg" alt=""></p>
 
       
 
@@ -236,11 +422,19 @@ git reset [hashcode]    //回退到哈希值为hashcode的提交
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">命令行</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">命令行</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">奇怪的魔改增加了！</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Unix</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MacOS</a>
         		</li>
       		
 		</ul>
@@ -307,7 +501,7 @@ git reset [hashcode]    //回退到哈希值为hashcode的提交
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:natsunoyoru97.github.io/2020/03/13/Git常见问题之一：我想撤回之前的提交，该怎么办？/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:natsunoyoru97.github.io/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +515,9 @@ git reset [hashcode]    //回退到哈希值为hashcode的提交
   
 <nav id="article-nav">
   
-    <a href="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          奇怪的魔改增加了！在mac终端上显示奇怪的MOTD
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/13/电子书分享/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">电子书分享</div>
+    <a href="/2020/03/13/Git常见问题之一：我想撤回之前的提交，该怎么办？/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git常见问题之一：我想撤回之前的提交，该怎么办？</div>
       <i class="icon-circle-right"></i>
     </a>
   
