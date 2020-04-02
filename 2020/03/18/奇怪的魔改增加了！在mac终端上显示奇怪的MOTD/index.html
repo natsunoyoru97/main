@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="natsunoyoru97.github.io">
   <title>奇怪的魔改增加了！在mac终端上显示奇怪的MOTD | natsunoyoru</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="想让自己的登录界面显示点什么东西，但又不想用neofetch，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：  什么是MOTDMOTD，全称Message of the Day，也就是终端上一登录就会显示的玩意，而一般MOTD是空的，也就是登录时不会显示任何信息。要想自定义登录消息，我们需要对MOT">
+  <meta name="description" content="想让自己的登录界面显示点什么东西，但又不想用neofetch，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：">
 <meta name="keywords" content="命令行,奇怪的魔改增加了！,Unix,MacOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="奇怪的魔改增加了！在mac终端上显示奇怪的MOTD">
 <meta property="og:url" content="natsunoyoru97.github.io/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/index.html">
 <meta property="og:site_name" content="natsunoyoru">
-<meta property="og:description" content="想让自己的登录界面显示点什么东西，但又不想用neofetch，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：  什么是MOTDMOTD，全称Message of the Day，也就是终端上一登录就会显示的玩意，而一般MOTD是空的，也就是登录时不会显示任何信息。要想自定义登录消息，我们需要对MOT">
+<meta property="og:description" content="想让自己的登录界面显示点什么东西，但又不想用neofetch，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：">
 <meta property="og:locale" content="Chinese(Simplified)/ English">
 <meta property="og:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-18下午6.54.04.png">
 <meta property="og:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-18下午11.42.03.png">
 <meta property="og:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-19上午12.37.42.png">
 <meta property="og:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/p253410151.jpg">
-<meta property="og:updated_time" content="2020-03-19T12:27:32.194Z">
+<meta property="og:updated_time" content="2020-04-02T15:46:53.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="奇怪的魔改增加了！在mac终端上显示奇怪的MOTD">
-<meta name="twitter:description" content="想让自己的登录界面显示点什么东西，但又不想用neofetch，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：  什么是MOTDMOTD，全称Message of the Day，也就是终端上一登录就会显示的玩意，而一般MOTD是空的，也就是登录时不会显示任何信息。要想自定义登录消息，我们需要对MOT">
+<meta name="twitter:description" content="想让自己的登录界面显示点什么东西，但又不想用neofetch，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：">
 <meta name="twitter:image" content="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-18下午6.54.04.png">
   
     <link rel="alternative" href="/atom.xml" title="natsunoyoru" type="application/atom+xml">
@@ -192,6 +192,7 @@
       
         <p>想让自己的登录界面显示点什么东西，但又不想用<a href="https://github.com/dylanaraps/neofetch" target="_blank" rel="noopener">neofetch</a>，所以花了一点时间改造了下自己终端的登录信息。这个教程不仅适用于linux，macOS也是可以的。我就是对mac的终端做的魔改。目前的（大半）成品：</p>
 <p><img src="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/截屏2020-03-18下午6.54.04.png" alt=""></p>
+<a id="more"></a>
 <h3 id="什么是MOTD"><a href="#什么是MOTD" class="headerlink" title="什么是MOTD"></a>什么是MOTD</h3><p>MOTD，全称Message of the Day，也就是终端上一登录就会显示的玩意，而一般MOTD是空的，也就是登录时不会显示任何信息。要想自定义登录消息，我们需要对MOTD做一些改动。MOTD的位置一般在<code>/etc/motd</code>。</p>
 <h3 id="在MOTD里加一点文字"><a href="#在MOTD里加一点文字" class="headerlink" title="在MOTD里加一点文字"></a>在MOTD里加一点文字</h3><p>一般的资料都会提到这样一条命令：</p>
 <pre><code class="Shell">sudo pico /etc/motd
@@ -702,19 +703,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">电子书分享</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -735,6 +724,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">电子书分享</a>
               </li>
             
             <div class="clearfix"></div>

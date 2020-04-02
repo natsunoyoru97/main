@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="natsunoyoru97.github.io">
   <title>Git常见问题之一：我想撤回之前的提交，该怎么办？ | natsunoyoru</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。 情况是？1. 我还没有add这就很简单了，一行 git checkout -- &amp;lt;file&amp;gt;   就可以丢弃修改。要想删除untracked的文件需要用 git clean -[flag]   2. 我已经add了，但还没有commit用 git reset HEA">
+  <meta name="description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。">
 <meta name="keywords" content="git,命令行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git常见问题之一：我想撤回之前的提交，该怎么办？">
 <meta property="og:url" content="natsunoyoru97.github.io/2020/03/13/Git常见问题之一：我想撤回之前的提交，该怎么办？/index.html">
 <meta property="og:site_name" content="natsunoyoru">
-<meta property="og:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。 情况是？1. 我还没有add这就很简单了，一行 git checkout -- &amp;lt;file&amp;gt;   就可以丢弃修改。要想删除untracked的文件需要用 git clean -[flag]   2. 我已经add了，但还没有commit用 git reset HEA">
+<meta property="og:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。">
 <meta property="og:locale" content="Chinese(Simplified)/ English">
-<meta property="og:updated_time" content="2020-03-13T13:31:23.935Z">
+<meta property="og:updated_time" content="2020-04-02T15:47:33.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常见问题之一：我想撤回之前的提交，该怎么办？">
-<meta name="twitter:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。 情况是？1. 我还没有add这就很简单了，一行 git checkout -- &amp;lt;file&amp;gt;   就可以丢弃修改。要想删除untracked的文件需要用 git clean -[flag]   2. 我已经add了，但还没有commit用 git reset HEA">
+<meta name="twitter:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。">
   
     <link rel="alternative" href="/atom.xml" title="natsunoyoru" type="application/atom+xml">
   
@@ -186,6 +186,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。</p>
+<a id="more"></a>
 <h1 id="情况是？"><a href="#情况是？" class="headerlink" title="情况是？"></a>情况是？</h1><h3 id="1-我还没有add"><a href="#1-我还没有add" class="headerlink" title="1. 我还没有add"></a>1. 我还没有add</h3><p>这就很简单了，一行</p>
 <pre><code class="shell">git checkout -- &lt;file&gt;
 
@@ -517,19 +518,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">电子书分享</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,6 +539,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">电子书分享</a>
               </li>
             
             <div class="clearfix"></div>
