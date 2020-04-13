@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="natsunoyoru97.github.io">
-  <title>Git常见问题之一：我想撤回之前的提交，该怎么办？ | natsunoyoru</title>
+  <title>算法总结：解决Super Ugly Number问题的万用模版 | natsunoyoru</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。">
-<meta name="keywords" content="git,命令行">
+  <meta name="description" content="Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &amp;gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。 动态规划与数学归纳法动态规划方法和离散数学的归纳法（Mathematical Induction）关系密切，而用归纳法求证需要两个条件：  当n = 1时命题成立。 假设">
+<meta name="keywords" content="算法,动态规划,Dynamic Programming">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git常见问题之一：我想撤回之前的提交，该怎么办？">
-<meta property="og:url" content="natsunoyoru97.github.io/2020/03/13/Git常见问题之一：我想撤回之前的提交，该怎么办？/index.html">
+<meta property="og:title" content="算法总结：解决Super Ugly Number问题的万用模版">
+<meta property="og:url" content="natsunoyoru97.github.io/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/index.html">
 <meta property="og:site_name" content="natsunoyoru">
-<meta property="og:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。">
+<meta property="og:description" content="Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &amp;gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。 动态规划与数学归纳法动态规划方法和离散数学的归纳法（Mathematical Induction）关系密切，而用归纳法求证需要两个条件：  当n = 1时命题成立。 假设">
 <meta property="og:locale" content="Chinese(Simplified)/ English">
-<meta property="og:updated_time" content="2020-04-02T15:47:33.747Z">
+<meta property="og:image" content="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/截屏2020-04-13下午9.42.48.png">
+<meta property="og:updated_time" content="2020-04-13T16:00:09.710Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git常见问题之一：我想撤回之前的提交，该怎么办？">
-<meta name="twitter:description" content="这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。">
+<meta name="twitter:title" content="算法总结：解决Super Ugly Number问题的万用模版">
+<meta name="twitter:description" content="Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &amp;gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。 动态规划与数学归纳法动态规划方法和离散数学的归纳法（Mathematical Induction）关系密切，而用归纳法求证需要两个条件：  当n = 1时命题成立。 假设">
+<meta name="twitter:image" content="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/截屏2020-04-13下午9.42.48.png">
   
     <link rel="alternative" href="/atom.xml" title="natsunoyoru" type="application/atom+xml">
   
@@ -165,58 +167,81 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git常见问题之一：我想撤回之前的提交，该怎么办？" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-算法总结：解决Super-Ugly-Number问题的万用模版" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git常见问题之一：我想撤回之前的提交，该怎么办？
+      算法总结：解决Super Ugly Number问题的万用模版
     </h1>
   
 
         
-        <a href="/2020/03/13/Git常见问题之一：我想撤回之前的提交，该怎么办？/" class="archive-article-date">
-  	<time datetime="2020-03-13T13:20:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
+        <a href="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/" class="archive-article-date">
+  	<time datetime="2020-04-12T12:12:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这篇是作为半个过来人的我用搜索引擎、实践经验甚至血泪总结出来的教训。要想解决这个问题，具体操作取决于你的改动在什么阶段。</p>
-<a id="more"></a>
-<h1 id="情况是？"><a href="#情况是？" class="headerlink" title="情况是？"></a>情况是？</h1><h3 id="1-我还没有add"><a href="#1-我还没有add" class="headerlink" title="1. 我还没有add"></a>1. 我还没有add</h3><p>这就很简单了，一行</p>
-<pre><code class="lang-shell">git checkout -- &lt;file&gt;
+        <p>Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。</p>
+<h3 id="动态规划与数学归纳法"><a href="#动态规划与数学归纳法" class="headerlink" title="动态规划与数学归纳法"></a>动态规划与数学归纳法</h3><p>动态规划方法和离散数学的归纳法（Mathematical Induction）关系密切，而用归纳法求证需要两个条件：</p>
+<ul>
+<li>当n = 1时命题成立。</li>
+<li>假设n = m时命题成立，那么能推倒出n = m + 1时命题同样成立。</li>
+</ul>
+<p>而动态规划方法无非是<strong>已知初始状态、从前一个状态推导后一个状态</strong>（或者相反），找到状态之间的状态公式是应用这种方法的关键。</p>
+<h3 id="动态规划的解决思路"><a href="#动态规划的解决思路" class="headerlink" title="动态规划的解决思路"></a>动态规划的解决思路</h3><p>先看看Leetcode第264题Ugly Number II：</p>
+<p><img src="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/截屏2020-04-13下午9.42.48.png" alt=""></p>
+<p>它的第四个提示如下：</p>
+<blockquote>
+<p>Assume you have <script type="math/tex">U_{k}</script>, the <script type="math/tex">k^{th}</script> ugly number. Then <script type="math/tex">U_{k+1}</script> must be <script type="math/tex">Min(L_{1} * 2, L_{2} * 3, L_{3} * 5)</script>.</p>
+</blockquote>
+<p>这句话是动态规划方法得以应用的重要条件，我们可以利用它推导出从当前状态到前一个状态的<strong>状态公式</strong>。</p>
+<p>在列出状态公式之前，我们需要初始化几个数组：<code>dp</code>、<code>index</code>和<code>primes</code>。其中各个数组表示的是：</p>
+<ul>
+<li>利用数组<code>dp</code>储存<strong>从小到大</strong>排列的Ugly Number。</li>
+<li>利用数组<code>index</code>保存当前计算需要相乘的倍数，并规避取Ugly Number时会面临的数字重复的问题。</li>
+<li>利用数组<code>primes</code>储存所有涉及到的质数。</li>
+</ul>
+<p>既然已知<code>dp[0]</code>为1，利用计算出来的最小值求得<code>dp[i]</code>的值。在<code>i</code>达到<code>n</code>之前往复操作，直到求得<code>dp[n - 1]</code>的值。</p>
+<p>由此可得状态公式：<code>min = Min(primes[j] * dp[[index[j]]）</code>。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>解决此类问题的Java代码模版，以第264题为例：</p>
+<pre><code class="lang-Java">class Solution 
+{
+    public int nthUglyNumber(int n) 
+    {
+        //有的题目里面函数参数就包含primes数组
+        int[] primes = int[] { 2, 3, 5 };
+        int[] dp = new int[n];
+        //初始化index数组，使其指向dp[0]（即1），从1开始累增倍数
+        int[] index = new int[primes.length];
+        Arrays.fill(index, 0);
+        dp[0] = 1;
+
+        for (int i = 1; i &lt; n; i++)
+        {
+            int min = primes[0] * dp[index[0]];
+
+            for (int j = 1; j &lt; primes.length; j++)
+                min = Math.min(min, primes[j] * dp[index[j]]);
+
+            dp[i] = min;
+
+            //当min与第j + 1个质数与j + 1的积相同，则跳过这个重复
+            //的数，将倍数加1
+            for (int j = 0; j &lt; primes.length; j++)
+                if (min == primes[j] * dp[index[j]]) index[j]++;
+        }
+
+        return dp[n - 1];
+    }
+}
 </code></pre>
-<p>就可以丢弃修改。要想删除untracked的文件需要用</p>
-<pre><code class="lang-shell">git clean -[flag]
-</code></pre>
-<h3 id="2-我已经add了，但还没有commit"><a href="#2-我已经add了，但还没有commit" class="headerlink" title="2. 我已经add了，但还没有commit"></a>2. 我已经add了，但还没有commit</h3><p>用</p>
-<pre><code class="lang-shell">git reset HEAD &lt;file&gt;
-</code></pre>
-<p>丢弃已经add的修改。这时就回退到3.1中的情景了，按照3.1的操作做即可。</p>
-<p>若想同时存储本地的修改，则用</p>
-<pre><code class="lang-shell">git stash
-</code></pre>
-<p>清掉工具树并让你的git文件与<code>HEAD</code>状态保持一致。</p>
-<h3 id="3-我已经commit了，但还没有push"><a href="#3-我已经commit了，但还没有push" class="headerlink" title="3. 我已经commit了，但还没有push"></a>3. 我已经commit了，但还没有push</h3><p>先查看自己的本地分支比远程分支提前了多少个提交，再按数量回退即可。这个时候会回退到add之前的状态。</p>
-<p>回退操作可以有如下三种：</p>
-<pre><code class="lang-shell">git reset HEAD^         //只是提前一个提交
-git reset HEAD~[count]  //提前count次提交
-git reset [hashcode]    //回退到哈希值为hashcode的提交
-</code></pre>
-<p>其中每次提交的哈希值可以通过</p>
-<pre><code class="lang-shell">git reflog
-</code></pre>
-<p>查看。</p>
-<h3 id="4-我已经push了"><a href="#4-我已经push了" class="headerlink" title="4. 我已经push了"></a>4. 我已经push了</h3><p>那就没办法了，返回你以前的commit再强行<code>push</code>吧。</p>
-<p>先回退自己的本地分支（方法参照3.3），再用</p>
-<pre><code class="lang-shell">git push -force
-</code></pre>
-<p>把回退的本地版本强行推送至远程分支。这么做有效是有效，但用了之后<strong>一起开发的小伙伴的commit全军覆没</strong>，把我吓得瑟瑟发抖，最后还得向她连声道歉，真的是怕了。<strong>在多人合作的场合务必慎用</strong>。<br>关于公共的远程分支的回滚方法<a href="https://www.cnblogs.com/qlqwjy/p/8179684.html" target="_blank" rel="noopener">有篇文章</a>讲得很好，大家可以去看看。</p>
-<h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><p>我也没多少用git的经验，只是之前有看过一点git相关的手册，对git的状态控制略知一二。这里推荐<strong><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《精通Git》</a></strong>，无论是只会图形界面的简单操作的小白还是对git有一定了解的进阶学习者，这本书都很合适。另外有一款网页游戏（说游戏似乎不大合适）叫 <strong><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">《学习Git分支》</a></strong>，比较适合对git了解很少的新手。</p>
+<p>不过对于这道题而言，由于组成的质数已定且数量很少，这个模版<strong>并不是时间空间最优</strong>的。</p>
 
       
 
@@ -230,11 +255,15 @@ git reset [hashcode]    //回退到哈希值为hashcode的提交
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">命令行</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Dynamic Programming</a>
         		</li>
       		
 		</ul>
@@ -301,7 +330,7 @@ git reset [hashcode]    //回退到哈希值为hashcode的提交
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:natsunoyoru97.github.io/2020/03/13/Git常见问题之一：我想撤回之前的提交，该怎么办？/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:natsunoyoru97.github.io/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +344,9 @@ git reset [hashcode]    //回退到哈希值为hashcode的提交
   
 <nav id="article-nav">
   
-    <a href="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          奇怪的魔改增加了！在mac终端上显示奇怪的MOTD
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/13/电子书分享/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">电子书分享</div>
+    <a href="/2020/03/18/奇怪的魔改增加了！在mac终端上显示奇怪的MOTD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">奇怪的魔改增加了！在mac终端上显示奇怪的MOTD</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -353,7 +373,7 @@ git reset [hashcode]    //回退到哈希值为hashcode的提交
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#情况是？"><span class="toc-number">1.</span> <span class="toc-text">情况是？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-我还没有add"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 我还没有add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-我已经add了，但还没有commit"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 我已经add了，但还没有commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-我已经commit了，但还没有push"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 我已经commit了，但还没有push</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-我已经push了"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 我已经push了</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#推荐"><span class="toc-number">2.</span> <span class="toc-text">推荐</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#动态规划与数学归纳法"><span class="toc-number">1.</span> <span class="toc-text">动态规划与数学归纳法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态规划的解决思路"><span class="toc-number">2.</span> <span class="toc-text">动态规划的解决思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实现"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li></ol>
                     </div>
                 </span>
             </div>
