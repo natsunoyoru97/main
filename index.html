@@ -189,61 +189,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。</p>
-<h3 id="动态规划与数学归纳法"><a href="#动态规划与数学归纳法" class="headerlink" title="动态规划与数学归纳法"></a>动态规划与数学归纳法</h3><p>动态规划方法和离散数学的归纳法（Mathematical Induction）关系密切，而用归纳法求证需要两个条件：</p>
-<ul>
-<li>当n = 1时命题成立。</li>
-<li>假设n = m时命题成立，那么能推倒出n = m + 1时命题同样成立。</li>
-</ul>
-<p>而动态规划方法无非是<strong>已知初始状态、从前一个状态推导后一个状态</strong>（或者相反），找到状态之间的状态公式是应用这种方法的关键。</p>
-<h3 id="动态规划的解决思路"><a href="#动态规划的解决思路" class="headerlink" title="动态规划的解决思路"></a>动态规划的解决思路</h3><p>先看看Leetcode第264题Ugly Number II：</p>
-<p><img src="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/截屏2020-04-13下午9.42.48.png" alt=""></p>
-<p>它的第四个提示如下：</p>
-<blockquote>
-<p>Assume you have <script type="math/tex">U_{k}</script>, the <script type="math/tex">k^{th}</script> ugly number. Then <script type="math/tex">U_{k+1}</script> must be <script type="math/tex">Min(L_{1} * 2, L_{2} * 3, L_{3} * 5)</script>.</p>
-</blockquote>
-<p>这句话是动态规划方法得以应用的重要条件，我们可以利用它推导出从当前状态到前一个状态的<strong>状态公式</strong>。</p>
-<p>在列出状态公式之前，我们需要初始化几个数组：<code>dp</code>、<code>index</code>和<code>primes</code>。其中各个数组表示的是：</p>
-<ul>
-<li>利用数组<code>dp</code>储存<strong>从小到大</strong>排列的Ugly Number。</li>
-<li>利用数组<code>index</code>保存当前计算需要相乘的倍数，并规避取Ugly Number时会面临的数字重复的问题。</li>
-<li>利用数组<code>primes</code>储存所有涉及到的质数。</li>
-</ul>
-<p>既然已知<code>dp[0]</code>为1，利用计算出来的最小值求得<code>dp[i]</code>的值。在<code>i</code>达到<code>n</code>之前往复操作，直到求得<code>dp[n - 1]</code>的值。</p>
-<p>由此可得状态公式：<code>min = Min(primes[j] * dp[[index[j]]）</code>。</p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>解决此类问题的Java代码模版，以第264题为例：</p>
-<pre><code class="lang-Java">class Solution 
-{
-    public int nthUglyNumber(int n) 
-    {
-        //有的题目里面函数参数就包含primes数组
-        int[] primes = int[] { 2, 3, 5 };
-        int[] dp = new int[n];
-        //初始化index数组，使其指向dp[0]（即1），从1开始累增倍数
-        int[] index = new int[primes.length];
-        Arrays.fill(index, 0);
-        dp[0] = 1;
-
-        for (int i = 1; i &lt; n; i++)
-        {
-            int min = primes[0] * dp[index[0]];
-
-            for (int j = 1; j &lt; primes.length; j++)
-                min = Math.min(min, primes[j] * dp[index[j]]);
-
-            dp[i] = min;
-
-            //当min与第j + 1个质数与j + 1的积相同，则跳过这个重复
-            //的数，将倍数加1
-            for (int j = 0; j &lt; primes.length; j++)
-                if (min == primes[j] * dp[index[j]]) index[j]++;
-        }
-
-        return dp[n - 1];
-    }
-}
-</code></pre>
-<p>不过对于这道题而言，由于组成的质数已定且数量很少，这个模版<strong>并不是时间空间最优</strong>的。</p>
-
+        
+          <a class="article-more-a" href="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/#more">more >></a>
+        
       
 
       
@@ -918,19 +866,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">命令行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
               </li>
              
               <li class="article-tag-list-item">
