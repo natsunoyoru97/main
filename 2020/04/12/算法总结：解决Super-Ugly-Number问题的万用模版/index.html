@@ -17,7 +17,7 @@
 <meta property="og:description" content="Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &amp;gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。">
 <meta property="og:locale" content="Chinese(Simplified)/ English">
 <meta property="og:image" content="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/截屏2020-04-13下午9.42.48.png">
-<meta property="og:updated_time" content="2020-04-19T05:29:37.103Z">
+<meta property="og:updated_time" content="2020-07-31T14:58:50.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法总结：解决Super Ugly Number问题的万用模版">
 <meta name="twitter:description" content="Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &amp;gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。">
@@ -229,19 +229,48 @@
         Arrays.fill(index, 0);
         dp[0] = 1;
 
-        for (int i = 1; i &lt; n; i++)
-        {
+        for (int i = 1; i &lt; n; i++) {
             int min = primes[0] * dp[index[0]];
 
-            for (int j = 1; j &lt; primes.length; j++)
+            for (int j = 1; j &lt; primes.length; j++) {
                 min = Math.min(min, primes[j] * dp[index[j]]);
+            }
 
             dp[i] = min;
 
             //当min与第j + 1个质数与j + 1的积相同，则跳过这个重复
             //的数，将倍数加1
-            for (int j = 0; j &lt; primes.length; j++)
+            for (int j = 0; j &lt; primes.length; j++) {
                 if (min == primes[j] * dp[index[j]]) index[j]++;
+            }
+        }
+
+        return dp[n - 1];
+    }
+}
+</code></pre>
+<p>C++代码则如下：</p>
+<pre><code class="lang-C++">class Solution 
+{
+  public:
+    int nthUglyNumber(int n) 
+    {
+        vector&lt;int&gt; primes { 2, 3, 5 };
+        vector&lt;int&gt; dp(n, 1);
+        vector&lt;int&gt; index(primes.size(), 0);
+
+        for (int i = 1; i &lt; n; i++) {
+            int curr_min = primes[0] * dp[index[0]];
+
+            for (int j = 1; j &lt; primes.size(); ++j) {
+                curr_min = min(curr_min, primes[j] * dp[index[j]]);
+            }
+
+            dp[i] = curr_min;
+
+            for (int j = 0; j &lt; primes.size(); ++j) {
+                if (curr_min == primes[j] * dp[index[j]]) index[j]++;
+            }
         }
 
         return dp[n - 1];
@@ -541,7 +570,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">奇怪的魔改增加了！</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,7 +582,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">总结</a>
+                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,15 +598,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">奇怪的魔改增加了！</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
