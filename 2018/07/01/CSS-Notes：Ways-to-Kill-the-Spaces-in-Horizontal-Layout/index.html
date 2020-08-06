@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="natsunoyoru97.github.io">
   <title>CSS Notes：Ways to Kill the Spaces in Horizontal Layout | natsunoyoru</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -38,7 +38,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -192,7 +192,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>There are many ways to kill the spaces. Some funky ways like minimized HTML and skipping the closing tag will also be mentioned.</p>
-<p>Note that many of these methods is using the <code>inline-block</code> property, which is only of use on <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank" rel="noopener">inline elements</a>.</p>
+<p>Note that many of these methods is using the <code>inline-block</code> property, which is only of use on <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">inline elements</a>.</p>
 <h3 id="1-Set-the-Font-Size-to-Zero"><a href="#1-Set-the-Font-Size-to-Zero" class="headerlink" title="1. Set the Font Size to Zero"></a>1. Set the Font Size to Zero</h3><ul>
 <li>Setting a <code>font-size</code> of 0 on the container itself (thus causing a blank space character to have zero width), and then resetting the size on the items.</li>
 </ul>
@@ -208,9 +208,9 @@
 </code></pre>
 <a id="more"></a>
 <h4 id="1-2-Drawbacks"><a href="#1-2-Drawbacks" class="headerlink" title="1.2 Drawbacks"></a>1.2 Drawbacks</h4><ol>
-<li>In Android, the way mentioned above become no use at all. <a href="https://codepen.io/stowball/details/LsICH" target="_blank" rel="noopener">Reseach</a></li>
+<li>In Android, the way mentioned above become no use at all. <a href="https://codepen.io/stowball/details/LsICH">Reseach</a></li>
 <li>Be careful about  using <code>em</code>or<code>%</code>,  because they cascade the children would also have zero font size.</li>
-<li>If you use <code>@font-face</code> with this technique in Safari 5.0.x, the fonts will lose anti-aliasing. (If you set the font-size above 4px, it will clear the bug)<br><a href="https://cdn.css-tricks.com/wp-content/uploads/2012/04/Screen-Shot-2013-06-11-at-4.23.03-PM.png" target="_blank" rel="noopener">Screenshot</a><br><a href="http://jsfiddle.net/39GZd/7/" target="_blank" rel="noopener">Testcase</a></li>
+<li>If you use <code>@font-face</code> with this technique in Safari 5.0.x, the fonts will lose anti-aliasing. (If you set the font-size above 4px, it will clear the bug)<br><a href="https://cdn.css-tricks.com/wp-content/uploads/2012/04/Screen-Shot-2013-06-11-at-4.23.03-PM.png">Screenshot</a><br><a href="http://jsfiddle.net/39GZd/7/">Testcase</a></li>
 </ol>
 <h3 id="2-Negative-Margin"><a href="#2-Negative-Margin" class="headerlink" title="2. Negative Margin"></a>2. Negative Margin</h3><p>Setting negative margin is also useful to scoot the elements back. The font-size property may need to be adjusted based on font size of parent.</p>
 <pre><code class="lang-CSS">    nav a {
@@ -219,9 +219,9 @@
     }
 </code></pre>
 <h4 id="2-1-Drawbacks"><a href="#2-1-Drawbacks" class="headerlink" title="2.1 Drawbacks"></a>2.1 Drawbacks</h4><p>This technique is problematic in IE 6 &amp; 7. Also, the display breaks in other browsers when I run the pen in CodePen.</p>
-<p><a href="https://s15.postimg.cc/95ei4lni3/2018-07-01_7.17.00.png" target="_blank" rel="noopener">Screenshot in Firefox 61.0</a><br><a href="https://postimg.cc/image/6o2qxm693/" target="_blank" rel="noopener">Screenshot in Chrome 67.0.3396</a><br><a href="https://s15.postimg.cc/4xjpw0tu3/2018-07-01_7.28.09.png" target="_blank" rel="noopener">Screenshot in Safari 11.1</a></p>
+<p><a href="https://s15.postimg.cc/95ei4lni3/2018-07-01_7.17.00.png">Screenshot in Firefox 61.0</a><br><a href="https://postimg.cc/image/6o2qxm693/">Screenshot in Chrome 67.0.3396</a><br><a href="https://s15.postimg.cc/4xjpw0tu3/2018-07-01_7.28.09.png">Screenshot in Safari 11.1</a></p>
 <p>When I set the margin-right less than -4 (like -5 or -6), it will clear the bug but the width of the container is smaller than it usually is. It quite relies on size assumption, and the display differs in different browsers.</p>
-<h3 id="3-Reset-the-Font-family-Property"><a href="#3-Reset-the-Font-family-Property" class="headerlink" title="3. Reset the Font-family Property"></a>3. Reset the Font-family Property</h3><p>Using <a href="https://matthewlein.com/articles/inline-block-fix" target="_blank" rel="noopener">a tiny custom font</a>, only containing a blank space character with a zero width on the parent element. The original <code>font-family</code> is then reset on the child elements. </p>
+<h3 id="3-Reset-the-Font-family-Property"><a href="#3-Reset-the-Font-family-Property" class="headerlink" title="3. Reset the Font-family Property"></a>3. Reset the Font-family Property</h3><p>Using <a href="https://matthewlein.com/articles/inline-block-fix">a tiny custom font</a>, only containing a blank space character with a zero width on the parent element. The original <code>font-family</code> is then reset on the child elements. </p>
 <p>It works with any em-based elements, and does not rely on size assumptions.</p>
 <pre><code class="lang-CSS">    nav ul {
         /*clear the font-family property*/
@@ -283,7 +283,7 @@
     }
 </code></pre>
 <h4 id="5-1-Drawback"><a href="#5-1-Drawback" class="headerlink" title="5.1 Drawback"></a>5.1 Drawback</h4><p>It does not work on Opera below 12.1 and IE below 10.</p>
-<h3 id="6-Letter-spacing-and-Word-spacing-on-Grid-Container"><a href="#6-Letter-spacing-and-Word-spacing-on-Grid-Container" class="headerlink" title="6. Letter-spacing and Word-spacing on Grid Container"></a>6. Letter-spacing and Word-spacing on Grid Container</h3><p>This technique is used in Yahoo’s <a href="http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css" target="_blank" rel="noopener">YUI 3 CSS Grids</a>. I have no experience of YUI, maybe it worths a good try.</p>
+<h3 id="6-Letter-spacing-and-Word-spacing-on-Grid-Container"><a href="#6-Letter-spacing-and-Word-spacing-on-Grid-Container" class="headerlink" title="6. Letter-spacing and Word-spacing on Grid Container"></a>6. Letter-spacing and Word-spacing on Grid Container</h3><p>This technique is used in Yahoo’s <a href="http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css">YUI 3 CSS Grids</a>. I have no experience of YUI, maybe it worths a good try.</p>
 <pre><code class="lang-CSS">    .yui3-g {
         letter-spacing: -0.31em; /* webkit */
         *letter-spacing: normal; /* reset IE &lt; 8 */
@@ -298,19 +298,19 @@
         vertical-align: top;
     }
 </code></pre>
-<h4 id="6-1-Drawbacks"><a href="#6-1-Drawbacks" class="headerlink" title="6.1 Drawbacks"></a>6.1 Drawbacks</h4><p>I tested the letter-spacing property and word-spacing property respectively, and the result of setting letter-spacing turned out to be really weird no matter in Firefox, Chrome or Safari: <a href="https://s15.postimg.cc/ufbb79inv/2018-07-01_9.25.26.png" target="_blank" rel="noopener">Screenshot</a></p>
+<h4 id="6-1-Drawbacks"><a href="#6-1-Drawbacks" class="headerlink" title="6.1 Drawbacks"></a>6.1 Drawbacks</h4><p>I tested the letter-spacing property and word-spacing property respectively, and the result of setting letter-spacing turned out to be really weird no matter in Firefox, Chrome or Safari: <a href="https://s15.postimg.cc/ufbb79inv/2018-07-01_9.25.26.png">Screenshot</a></p>
 <p>The final result of testing word-spacing property is like the negative margin method, which is quite dependent on size assumptions.</p>
 <h2 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h2><ol>
-<li>A Complete Guide to Flexbox, Chris Coyier: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></li>
-<li>MDN web docs - Inline elements: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements</a></li>
-<li>Using Flexbox: Mixing Old and New for the Best Browser Support, Chris Coyier: <a href="https://css-tricks.com/using-flexbox/" target="_blank" rel="noopener">https://css-tricks.com/using-flexbox/</a></li>
-<li>Ways to handle spaces between inline-block elements, Chris Coyier: <a href="https://codepen.io/chriscoyier/pen/hmlqF" target="_blank" rel="noopener">https://codepen.io/chriscoyier/pen/hmlqF</a></li>
+<li>A Complete Guide to Flexbox, Chris Coyier: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></li>
+<li>MDN web docs - Inline elements: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements</a></li>
+<li>Using Flexbox: Mixing Old and New for the Best Browser Support, Chris Coyier: <a href="https://css-tricks.com/using-flexbox/">https://css-tricks.com/using-flexbox/</a></li>
+<li>Ways to handle spaces between inline-block elements, Chris Coyier: <a href="https://codepen.io/chriscoyier/pen/hmlqF">https://codepen.io/chriscoyier/pen/hmlqF</a></li>
 </ol>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
-<li>Another way to kill space between inline-blocks, Matthew Lein: <a href="https://matthewlein.com/articles/inline-block-fix" target="_blank" rel="noopener">https://matthewlein.com/articles/inline-block-fix</a></li>
+<li>Another way to kill space between inline-blocks, Matthew Lein: <a href="https://matthewlein.com/articles/inline-block-fix">https://matthewlein.com/articles/inline-block-fix</a></li>
 <li>CSS Mastery (Third Edition), Andy Budd &amp; Emil Bjorklund, Chapter 6</li>
-<li>Fighting the Space Between Inline Block Elements, Chris Coyier: <a href="https://css-tricks.com/fighting-the-space-between-inline-block-elements/" target="_blank" rel="noopener">https://css-tricks.com/fighting-the-space-between-inline-block-elements/</a> </li>
-<li>YUI 3 CSS Grids: <a href="http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css" target="_blank" rel="noopener">http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css</a></li>
+<li>Fighting the Space Between Inline Block Elements, Chris Coyier: <a href="https://css-tricks.com/fighting-the-space-between-inline-block-elements/">https://css-tricks.com/fighting-the-space-between-inline-block-elements/</a> </li>
+<li>YUI 3 CSS Grids: <a href="http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css">http://yui.yahooapis.com/3.5.0/build/cssgrids/grids.css</a></li>
 </ol>
 
       
@@ -547,6 +547,17 @@ MathJax.Hub.Queue(function() {
 
 
 
+
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+        }
+    </script>
+
+
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121050579-1"></script>
 <script>
@@ -556,6 +567,7 @@ MathJax.Hub.Queue(function() {
 
   gtag('config', 'UA-121050579-1');
 </script>
+
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -624,19 +636,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">电子书分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
               </li>
              
               <li class="article-tag-list-item">

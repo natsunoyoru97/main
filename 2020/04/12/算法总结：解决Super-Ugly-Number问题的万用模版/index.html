@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="natsunoyoru97.github.io">
   <title>算法总结：解决Super Ugly Number问题的万用模版 | natsunoyoru</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,7 +17,7 @@
 <meta property="og:description" content="Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &amp;gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。">
 <meta property="og:locale" content="Chinese(Simplified)/ English">
 <meta property="og:image" content="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/截屏2020-04-13下午9.42.48.png">
-<meta property="og:updated_time" content="2020-07-31T14:58:50.331Z">
+<meta property="og:updated_time" content="2020-07-31T16:15:29.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法总结：解决Super Ugly Number问题的万用模版">
 <meta name="twitter:description" content="Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &amp;gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。">
@@ -40,7 +40,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -195,6 +195,7 @@
       
         <p>Ugly Number一类的问题一般是这么问的：给定k个数量的质数（k &gt; 1），求第n个包含这些质数当中任意一个的倍数的Ugly Number。动态规划（Dynamic Programming）方法是这类问题的通用解法。</p>
 <a id="more"></a>
+<p>graph TD<br>A[Hard] —&gt;|Text| B(Round)<br>B —&gt; C{Decision}<br>C —&gt;|One| D[Result 1]<br>C —&gt;|Two| E[Result 2]</p>
 <h3 id="动态规划与数学归纳法"><a href="#动态规划与数学归纳法" class="headerlink" title="动态规划与数学归纳法"></a>动态规划与数学归纳法</h3><p>动态规划方法和离散数学的归纳法（Mathematical Induction）关系密切，而用归纳法求证需要两个条件：</p>
 <ul>
 <li>当n = 1时命题成立。</li>
@@ -202,7 +203,7 @@
 </ul>
 <p>而动态规划方法无非是<strong>已知初始状态、从前一个状态推导后一个状态</strong>（或者相反），找到状态之间的状态公式是应用这种方法的关键。</p>
 <h3 id="动态规划的解决思路"><a href="#动态规划的解决思路" class="headerlink" title="动态规划的解决思路"></a>动态规划的解决思路</h3><p>先看看Leetcode第264题Ugly Number II：</p>
-<p><img src="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/截屏2020-04-13下午9.42.48.png" alt=""></p>
+<p><img src="/2020/04/12/算法总结：解决Super-Ugly-Number问题的万用模版/截屏2020-04-13下午9.42.48.png" alt></p>
 <p>它的第四个提示如下：</p>
 <blockquote>
 <p>Assume you have <script type="math/tex">U_{k}</script>, the <script type="math/tex">k^{th}</script> ugly number. Then <script type="math/tex">U_{k+1}</script> must be <script type="math/tex">Min(L_{1} * 2, L_{2} * 3, L_{3} * 5)</script>.</p>
@@ -217,10 +218,8 @@
 <p>既然已知<code>dp[0]</code>为1，利用计算出来的最小值求得<code>dp[i]</code>的值。在<code>i</code>达到<code>n</code>之前往复操作，直到求得<code>dp[n - 1]</code>的值。</p>
 <p>由此可得状态公式：<code>min = Min(primes[j] * dp[[index[j]]）</code>。</p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>解决此类问题的Java代码模版，以第264题为例：</p>
-<pre><code class="lang-Java">class Solution 
-{
-    public int nthUglyNumber(int n) 
-    {
+<pre><code class="lang-Java">class Solution {
+    public int nthUglyNumber(int n) {
         //有的题目里面函数参数就包含primes数组
         int[] primes = int[] { 2, 3, 5 };
         int[] dp = new int[n];
@@ -250,11 +249,9 @@
 }
 </code></pre>
 <p>C++代码则如下：</p>
-<pre><code class="lang-C++">class Solution 
-{
+<pre><code class="lang-C++">class Solution {
   public:
-    int nthUglyNumber(int n) 
-    {
+    int nthUglyNumber(int n) {
         vector&lt;int&gt; primes { 2, 3, 5 };
         vector&lt;int&gt; dp(n, 1);
         vector&lt;int&gt; index(primes.size(), 0);
@@ -513,6 +510,17 @@ MathJax.Hub.Queue(function() {
 
 
 
+
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+        }
+    </script>
+
+
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121050579-1"></script>
 <script>
@@ -522,6 +530,7 @@ MathJax.Hub.Queue(function() {
 
   gtag('config', 'UA-121050579-1');
 </script>
+
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -590,19 +599,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">电子书分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
               </li>
              
               <li class="article-tag-list-item">
